@@ -1,0 +1,357 @@
+.search-container {
+  padding: 100px 0 50px;
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.search-header p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+.search-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.invisible-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Popular Routes */
+.popular-routes-section {
+  margin-bottom: 40px;
+}
+
+.popular-routes-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.popular-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.popular-route-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.popular-route-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.route-cities {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.from-city,
+.to-city {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.route-arrow {
+  color: var(--text-light);
+}
+
+.route-details {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 40px;
+}
+
+.results-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Train Cards */
+.trains-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.train-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.train-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.train-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.train-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.train-number {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.train-duration .duration {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.train-details {
+  margin-bottom: 20px;
+}
+
+.route-info {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.station {
+  text-align: center;
+}
+
+.station .time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.station .station-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.station .city {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.journey-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: 2px;
+  height: 40px;
+  background: var(--primary-color);
+  margin: 5px 0;
+}
+
+.distance {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.train-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.meta-value.classes {
+  color: var(--primary-color);
+}
+
+.train-actions {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.book-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 80px 0 30px;
+  }
+  
+  .search-card {
+    padding: 30px 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .search-header h1 {
+    font-size: 2rem;
+  }
+  
+  .popular-routes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .route-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .line {
+    width: 80px;
+    height: 2px;
+  }
+  
+  .train-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .train-meta {
+    grid-template-columns: 1fr;
+  }
+}

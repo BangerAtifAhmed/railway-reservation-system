@@ -1,0 +1,530 @@
+.booking-container {
+  padding: 100px 0 50px;
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.booking-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.booking-header p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+/* Train Summary */
+.train-summary-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.train-basic-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.train-basic-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.train-number {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.station-info {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.station {
+  text-align: center;
+}
+
+.station .time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.station .station-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.station .city {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.journey-details {
+  text-align: center;
+}
+
+.duration {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.distance {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Class Selection */
+.class-selection-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.passenger-selector {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.passenger-selector label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.passenger-counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--white);
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 15px;
+}
+
+.passenger-counter button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passenger-counter button:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.passenger-counter span {
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Classes Grid */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.class-card {
+  background: var(--white);
+  border: 2px solid #e5e7eb;
+  border-radius: 15px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.class-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.class-card.selected {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.class-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.availability-status {
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.class-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fare {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.available-berths {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.berth-breakdown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.berth-type {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.berth-type span:first-child {
+  color: var(--text-light);
+}
+
+.coach-info {
+  display: flex;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Selected Class Summary */
+.selected-class-summary {
+  position: sticky;
+  bottom: 0;
+  background: var(--white);
+  padding: 20px 0;
+  border-top: 2px solid #e5e7eb;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.selected-class-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.fare-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.fare-summary .fare {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.fare-summary .per-person {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.total-fare {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.proceed-btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Loading and Error States */
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-state,
+.error-message {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-state h2,
+.error-message {
+  color: var(--error);
+  margin-bottom: 15px;
+}
+
+.error-state p,
+.error-message p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 80px 0 30px;
+  }
+  
+  .booking-header h1 {
+    font-size: 2rem;
+  }
+  
+  .train-basic-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .station-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-content {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .proceed-btn {
+    width: 100%;
+  }
+}
+
+/* Employee Booking Statistics - Improved Visibility */
+.employee-details {
+  margin: 15px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.employee-details h5 {
+  color: var(--text-dark) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.booking-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-label {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  color: var(--primary-color) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Single passenger note */
+.single-passenger-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Employee note in summary */
+.employee-note small {
+  color: var(--success) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Ensure all text has proper contrast */
+.class-card {
+  color: var(--text-dark) !important;
+}
+
+.class-name {
+  color: var(--text-dark) !important;
+}
+
+.available-berths {
+  color: var(--text-dark) !important;
+}
+
+.total-berths {
+  color: var(--text-light) !important;
+}
+
+.berth-type span:first-child {
+  color: var(--text-dark) !important;
+}
+
+.berth-count {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.coach-info {
+  color: var(--text-light) !important;
+}
+
+/* Selected class info */
+.selected-class-info h4 {
+  color: var(--text-dark) !important;
+}
+
+.fare-summary .fare {
+  color: var(--primary-color) !important;
+}
+
+.fare-summary .per-person {
+  color: var(--text-light) !important;
+}
+
+.total-fare {
+  color: var(--text-dark) !important;
+}
+
+.total-fare strong {
+  color: var(--primary-color) !important;
+}

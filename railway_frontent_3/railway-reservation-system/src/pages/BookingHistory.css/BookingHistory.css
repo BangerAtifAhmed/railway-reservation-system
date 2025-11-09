@@ -1,0 +1,739 @@
+.booking-history-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem 0;
+  padding-top: 90px; /* Add this line */
+}
+
+.booking-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-content h1 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.header-content p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.employee-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Statistics Section */
+.stats-section {
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary);
+}
+
+.stat-card.confirmed {
+  border-left-color: var(--success);
+}
+
+.stat-card.cancelled {
+  border-left-color: var(--error);
+}
+
+.stat-card.waiting {
+  border-left-color: var(--warning);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Filter Section */
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Bookings List */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.booking-card.cancelled {
+  border-left-color: var(--error);
+  opacity: 0.8;
+}
+
+.booking-card.waiting {
+  border-left-color: var(--warning);
+}
+
+/* Booking Header */
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.booking-main-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pnr-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pnr-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.pnr-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.booking-action {
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  background: #f8f9fa;
+}
+
+.booking-time {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Booking Details */
+.booking-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.passenger-journey h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-dark);
+  font-size: 1.3rem;
+}
+
+.dependent-badge {
+  background: var(--info);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.route {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.train-number {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.booking-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.journey-date,
+.class-info,
+.seat-info {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Booking Footer */
+.booking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.additional-status {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.fare-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--success);
+}
+
+.employee-fare {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Booking Description */
+.booking-description {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--info);
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* No Bookings State */
+.no-bookings-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-bookings-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.no-bookings-state h2 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.no-bookings-state p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-filtered-bookings {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-filtered-bookings h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.no-filtered-bookings p {
+  color: var(--text-light);
+}
+
+/* Refresh Section */
+.refresh-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-state h2 {
+  color: var(--error);
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-history-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .booking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .booking-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-tabs {
+    justify-content: center;
+  }
+
+  .filter-tab {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-main-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Add to BookingHistory.css */
+
+/* Ticket Actions */
+.ticket-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.print-btn {
+  background: #fff;
+  border: 1px solid #007bff;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.print-btn:disabled {
+  background: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.fare-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Print ticket content (hidden by default) */
+.ticket-print-content {
+  /* This content is hidden and only used for printing */
+}
+
+/* Print-specific styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .booking-history-container {
+    background: white !important;
+  }
+}
+
+/* Loading state for print buttons */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fare-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .ticket-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .print-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Add to BookingHistory.css */
+
+/* Search and Filter Section */
+.search-filter-section {
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.search-input-group {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 45px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search-btn:hover {
+  color: var(--error);
+}
+
+.search-results-info {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* No Search Results */
+.no-search-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-filtered-bookings {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-filtered-bookings h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.no-filtered-bookings p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ticket Actions */
+.ticket-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.print-btn {
+  background: #fff;
+  border: 1px solid #007bff;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.print-btn:disabled {
+  background: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.fare-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Print ticket content (hidden by default) */
+.ticket-print-content {
+  /* This content is hidden and only used for printing */
+}
+
+/* Print-specific styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .booking-history-container {
+    background: white !important;
+  }
+}
+
+/* Loading state for print buttons */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-input-group {
+    max-width: 100%;
+  }
+  
+  .fare-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .ticket-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .print-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .search-results-info {
+    font-size: 0.8rem;
+  }
+}
+
+/* In BookingHistory.css and PNRTicket.css */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-danger:disabled {
+  background: #e74c3c;
+  border-color: #e74c3c;
+  opacity: 0.6;
+}
+
+.cancel-btn {
+  margin-right: 10px;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
