@@ -246,6 +246,28 @@ CREATE TABLE employee_transaction_history (
     FOREIGN KEY (employee_id) REFERENCES employee(employee_id),
     FOREIGN KEY (pnr_no) REFERENCES ticket(pnr_no)
 );    
+
+CREATE TABLE ticket_backup (
+    backup_id VARCHAR(10),
+    pnr_no VARCHAR(10),
+    train_no VARCHAR(10),
+    passenger_name VARCHAR(100),
+    date_time DATETIME,
+    source_station VARCHAR(10),
+    destination_station VARCHAR(10),
+    status ENUM('booked', 'confirmed', 'cancelled', 'waiting'),
+    user_id VARCHAR(10),
+    fare DECIMAL(10,2),
+    booking_time DATETIME,
+    cancellation_time DATETIME,
+    refund_amount DECIMAL(10,2),
+    employee_id VARCHAR(10),
+    operation_type ENUM('INSERT', 'UPDATE', 'DELETE'),
+    changed_at TIMESTAMP,
+    changed_by VARCHAR(100),
+    PRIMARY KEY (backup_id, changed_at)
+);
+
 INSERT INTO user (user_id, user_name, name, email, password, dob, age, gender, address, city, state, pin_code, mobile_no)
 VALUES
 ('U001', 'raj_sharma', 'Raj Sharma', 'raj.sharma@email.com', 'hashed_password_1', '1990-05-15', 33, 'male', '12 Gandhi Road', 'Mumbai', 'Maharashtra', '400001', '9876543210'),
@@ -2950,4 +2972,62 @@ BEGIN
     
     RETURN fare_amount;
 END//
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE TRIGGER trg_ticket_after_insert
+AFTER INSERT ON ticket
+FOR EACH ROW
+BEGIN
+    INSERT INTO ticket_backup (
+        backup_id, pnr_no, train_no, passenger_name, date_time,
+        source_station, destination_station, status, user_id, fare,
+        booking_time, cancellation_time, refund_amount, employee_id,
+        operation_type, changed_at, changed_by
+    ) VALUES (
+        CONCAT('B', LPAD(FLOOR(RAND()*999999999),9,'0')),
+        NEW.pnr_no, NEW.train_no, NEW.passenger_name, NEW.date_time,
+        NEW.source_station, NEW.destination_station, NEW.status, NEW.user_id, NEW.fare,
+        NEW.booking_time, NEW.cancellation_time, NEW.refund_amount, NEW.employee_id,
+        'INSERT', CURRENT_TIMESTAMP, CURRENT_USER()
+    );
+END$$
+
+CREATE TRIGGER trg_ticket_after_update
+AFTER UPDATE ON ticket
+FOR EACH ROW
+BEGIN
+    INSERT INTO ticket_backup (
+        backup_id, pnr_no, train_no, passenger_name, date_time,
+        source_station, destination_station, status, user_id, fare,
+        booking_time, cancellation_time, refund_amount, employee_id,
+        operation_type, changed_at, changed_by
+    ) VALUES (
+        CONCAT('B', LPAD(FLOOR(RAND()*999999999),9,'0')),
+        NEW.pnr_no, NEW.train_no, NEW.passenger_name, NEW.date_time,
+        NEW.source_station, NEW.destination_station, NEW.status, NEW.user_id, NEW.fare,
+        NEW.booking_time, NEW.cancellation_time, NEW.refund_amount, NEW.employee_id,
+        'UPDATE', CURRENT_TIMESTAMP, CURRENT_USER()
+    );
+END$$
+
+CREATE TRIGGER trg_ticket_after_delete
+AFTER DELETE ON ticket
+FOR EACH ROW
+BEGIN
+    INSERT INTO ticket_backup (
+        backup_id, pnr_no, train_no, passenger_name, date_time,
+        source_station, destination_station, status, user_id, fare,
+        booking_time, cancellation_time, refund_amount, employee_id,
+        operation_type, changed_at, changed_by
+    ) VALUES (
+        CONCAT('B', LPAD(FLOOR(RAND()*999999999),9,'0')),
+        OLD.pnr_no, OLD.train_no, OLD.passenger_name, OLD.date_time,
+        OLD.source_station, OLD.destination_station, OLD.status, OLD.user_id, OLD.fare,
+        OLD.booking_time, OLD.cancellation_time, OLD.refund_amount, OLD.employee_id,
+        'DELETE', CURRENT_TIMESTAMP, CURRENT_USER()
+    );
+END$$
+
 DELIMITER ;
